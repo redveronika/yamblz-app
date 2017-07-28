@@ -27,3 +27,39 @@
 - При клике на название аудитории выводить детальную информацию о ней: в каком корпусе, как пройти(мб схему прохода)
 
 ##### Приложение разработано под платформы IOS и Android
+
+
+### Распаковка проекта
+
+1. Необходимо склонировать проект локально на свой компьютер.
+
+2. Установить необходимые модули:
+```
+cd путь/к/папке/с/проектом
+npm install
+```
+
+3. Установить необходимые платформы с помощью команд
+```
+cordova platform add ios
+cordova platform add android
+```
+
+ Если при установке платформы IOS возникает ошибка 'Error: Cannot read property 'replace' of undefined', то предварительно выполните команду: `npm run install-ios-sim`
+ 
+ Вместе с платформой будут установлены необходимые файлы.
+ 
+ 4. Замените файл bot-data--fake.ts на имеющийся bot-data.ts.
+ 
+ 5. Запустите проект. Для удобства можно воспользоваться следующими командами: 
+ 
+ `npm run emulate-iPhone-6` - компиляция кода и запуск в эмуляторе iPhone 6  
+ `npm run emulate-android` - компиляция кода и запуск в эмуляторе Android устройства по умолчанию  
+ `npm run run-android-device` - компиляция кода и запуск на реальном устройстве
+ 
+ ### Скриншоты
+<div>
+ <img width="200" src="https://github.com/redveronika/yamblz-app/blob/master/screenshots/home.jpg">
+ <img width="200" src="https://github.com/redveronika/yamblz-app/blob/master/screenshots/menu.jpg"> 
+ <img width="200" src="https://github.com/redveronika/yamblz-app/blob/master/screenshots/schedule.jpg">
+</div>
