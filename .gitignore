@@ -7,9 +7,12 @@ platforms
 # Exclude plugins directory
 plugins
 
-#Exclude TS with data
+# Exclude TS with data
 src/bot-data.ts
 
-#Exclude www directory
+# Exclude content of www directory
 www/*
+
+# Keep empty www directory
+!www/.gitkeep
 
