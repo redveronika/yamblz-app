@@ -59,7 +59,7 @@ cordova platform add android
  
  `npm run emulate-iPhone-6` - компиляция кода и запуск в эмуляторе iPhone 6  
  `npm run emulate-android` - компиляция кода и запуск в эмуляторе Android устройства по умолчанию  
- `npm run run-android-device` - компиляция кода и запуск на реальном устройстве
+ `npm run run-android-device` - компиляция кода и запуск на реальном устройстве Android 
  
  ### Скриншоты
 <div>
