@@ -1,0 +1,18 @@
+students {
+
+  .list .item-block {
+    border-top: 6px solid #f7f9f8;
+  }
+
+  .list .item-block:last-child {
+    border-bottom: 0;
+  }
+
+  .list-item__telegram {
+    font-size: 16px;
+  }
+
+  .list-item__birthday {
+    margin-top: 10px;
+  }
+}

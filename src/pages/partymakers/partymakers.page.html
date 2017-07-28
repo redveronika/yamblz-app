@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle class="menu-icon">
+    </button>
+    <ion-title>Организаторы</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-row>
+    <form class="search-form" (ngSubmit)="searchPeople()">
+      <ion-searchbar class="search-form__bar" #searchInput autocapitalize=off id="ion-searchbar"
+                     color=primary
+                     placeholder="Поиск"
+                     [(ngModel)]="searchBarModel"
+                     [ngModelOptions]="{standalone: true}"
+                     [showCancelButton]="false">
+      </ion-searchbar>
+    </form>
+  </ion-row>
+  <ion-list class="people-list content-list" *ngIf="filterData.length > 0">
+    <button ion-item *ngFor="let partymaker of filterData" (click)="presentPersonDetail(partymaker.name)">
+      <h2>{{partymaker.name}}</h2>
+      <a *ngIf="partymaker.telegram.length > 0" [href]="'https://t.me/' + partymaker.telegram" class="list-item__telegram">@{{partymaker.telegram}}</a>
+      <h3 class="list-item__birthday"><span>{{partymaker.birthDate}}</span> <span>{{partymaker.birthMonthName}}</span></h3>
+      <div class="item-note" item-right></div>
+    </button>
+  </ion-list>
+  <section *ngIf="filterData.length === 0" text-center><p>Ничего не найдено</p></section>
+</ion-content>
+

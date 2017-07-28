@@ -1,0 +1,42 @@
+page-home {
+  .scroll-content {
+    padding: 0!important;
+  }
+
+  .yamblz-img {
+    width: 100vw;
+    min-height: 83vw;
+  }
+
+  .today-date {
+    text-align: center;
+    color: map_get($colors, primary);
+  }
+
+  .birthday-title {
+    margin-bottom: 10px;
+  }
+
+  .birthday-subtitle {
+    margin-top: 10px;
+  }
+
+  .list .item-block {
+    border-top: 6px solid #f7f9f8;
+  }
+
+  .list-item__date {
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 30px;
+  }
+
+  .list-item__location {
+    color: map_get($colors, light-gray);
+    margin-top: 10px;
+  }
+
+  ion-label {
+    white-space: normal;
+  }
+}

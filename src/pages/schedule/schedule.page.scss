@@ -1,0 +1,31 @@
+schedule {
+
+  .list .item-block {
+      border-top: 6px solid #f7f9f8;
+  }
+
+  .export-icon {
+    display: flex ;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .export-icon__button {
+    background-color: transparent;
+  }
+
+  .list-item__date {
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 30px;
+  }
+
+  .list-item__location {
+    color: map_get($colors, light-gray);
+    margin-top: 10px;
+  }
+
+  ion-label {
+    white-space: normal;
+  }
+}

@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons start>
+      <button ion-button (click)="dismiss()">
+        <span ion-text color="primary" *ngIf="platformName === 'ios'">Cancel</span>
+        <ion-icon name="md-close" *ngIf="platformName !== 'ios'"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <section *ngIf="noPersonData === true">
+    <ion-card>
+      <ion-card-content>
+        <h3>К сожалению, пока нет данных :(</h3>
+      </ion-card-content>
+    </ion-card>
+  </section>
+  <section *ngIf="noPersonData === false">
+    <img class="avatar-img" src="./assets/img/avatar-placeholder.png" srcset="./assets/img/avatar-placeholder@2x.png 2x"/>
+    <ion-card>
+      <ion-card-header>
+        {{personData.name}} <a *ngIf="personData.telegram.length > 0" [href]="'https://t.me/' + personData.telegram">@{{personData.telegram}}</a>
+      </ion-card-header>
+      <ion-card-content>
+        <div *ngIf="personData.roles.length > 0">
+          <h2 class="header-label header-label--hghlght-danger" [innerText]="personData.roles.length > 1 ? 'Роли в проекте:' : 'Роль в проекте:'"></h2>
+          <ul *ngFor="let role of personData.roles_RU">
+            <li>{{role}}</li>
+          </ul>
+        </div>
+
+        <div class="schools-block" *ngIf="personData.schools.length > 0">
+          <h2 class="header-label header-label--hghlght-secondary" [innerText]="personData.schools.length > 1 ? 'Школы:' : 'Школа:'"></h2>
+          <ul *ngFor="let school of personData.schools_RU">
+            <li>{{school.full}}</li>
+          </ul>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </section>
+</ion-content>

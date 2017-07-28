@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-navbar>
+      <button ion-button menuToggle class="menu-icon">
+      </button>
+      <ion-title>Расписание</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-row class="action-header">
+    <ion-col col-8>
+      <ion-select class="school-select" [(ngModel)]="school" (ionChange)="filterSchedule()" [selectOptions]="selectOptions" okText="ОК" cancelText="Отмена">
+        <ion-option value="all" selected="true">Все школы</ion-option>
+        <ion-option value="shri">Разработка интерфейсов</ion-option>
+        <ion-option value="shnr">Мобильная разработка</ion-option>
+        <ion-option value="shm">Менеджмент Яндекса</ion-option>
+        <ion-option value="shmd">Мобильный дизайн</ion-option>
+      </ion-select>
+    </ion-col>
+    <ion-col col-4 class="export-icon">
+      <button icon-only class="export-icon__button" (click)="exportToCalendar()">
+        <ion-icon name="calendar" color="primary"></ion-icon>
+      </button>
+    </ion-col>
+  </ion-row>
+  <ion-list class="content-list">
+    <button ion-item *ngFor="let lecture of filterData" (click)="presentLectureDetail(lecture.title)">
+      <h3 class="list-item__date"><span>{{lecture.date}}</span> {{lecture.month}}({{lecture.dayOfWeek}}) {{lecture.hours}}:{{lecture.minutes}}</h3>
+      <h2>{{lecture.title}}</h2>
+      <h3 class="list-item__location">{{lecture.location}}</h3>
+      <div class="item-note" item-right></div>
+    </button>
+  </ion-list>
+</ion-content>

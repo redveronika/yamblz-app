@@ -1,0 +1,28 @@
+person-detail {
+  .toolbar-background {
+    background-color: transparent!important;
+  }
+
+  .avatar-img {
+    display: flex;
+    max-width: 65%;
+    margin: 10px auto;
+  }
+
+  .schools-block {
+    margin-top: 20px;
+  }
+
+  .header-label {
+    display: inline-block;
+    padding: 3px 10px;
+  }
+
+  .header-label--hghlght-secondary {
+    background-color: map_get($colors, secondary-opacity);
+  }
+
+  .header-label--hghlght-danger {
+    background-color: map_get($colors, danger-opacity);
+  }
+}

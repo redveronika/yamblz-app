@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle class="menu-icon">
+    </button>
+    <ion-title>Мобилизация</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <img class="yamblz-img" src="./assets/img/yamblz.jpg" srcset="./assets/img/yamblz@2x.jpg 2x"/>
+  <h2 class="today-date">{{today.date}} {{today.monthName}}</h2>
+  <ion-card *ngIf="birthdayPersons.length > 0">
+    <ion-card-header>
+      Дни рождения сегодня
+    </ion-card-header>
+    <ion-card-content>
+      <h2 class="birthday-title" [innerText]="birthdayPersons.length > 1 ? 'Сегодня день рождения празднуют' : 'Сегодня день рождения празднует'"></h2>
+      <div *ngFor="let birthdayPerson of birthdayPersons">
+        <a class="person-name" (click)="presentPersonDetail(birthdayPerson.name)">{{birthdayPerson.name}}</a>
+      </div>
+      <h2 class="birthday-subtitle">Не забудь поздравить!</h2>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="scheduleData.length > 0">
+    <ion-card-header>
+      Расписание на сегодня
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list class="schedule-list content-list">
+        <button ion-item *ngFor="let lecture of scheduleData" (click)="presentLectureDetail(lecture.title)">
+          <h2>{{lecture.title}}</h2>
+          <h3 class="list-item__date">{{lecture.hours}}:{{lecture.minutes}}</h3>
+          <h3 class="list-item__location">{{lecture.location}}</h3>
+          <div class="item-note" item-right></div>
+        </button>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

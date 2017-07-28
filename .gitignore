@@ -1,0 +1,15 @@
+# Exclude node modules
+node_modules
+
+# Exclude platforms directory
+platforms
+
+# Exclude plugins directory
+plugins
+
+#Exclude TS with data
+src/bot-data.ts
+
+#Exclude www directory
+www/*
+

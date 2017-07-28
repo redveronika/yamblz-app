@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle class="menu-icon">
+    </button>
+    <ion-title>Cтуденты</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-row class="action-header">
+    <ion-select class="school-select" [(ngModel)]="school" (ionChange)="filterPeople()" [selectOptions]="selectOptions" okText="ОК" cancelText="Отмена">
+      <ion-option value="all" selected="true">Все школы</ion-option>
+      <ion-option value="shri">Разработка интерфейсов</ion-option>
+      <ion-option value="shnr">Мобильная разработка</ion-option>
+      <ion-option value="shm">Менеджмент Яндекса</ion-option>
+      <ion-option value="shmd">Мобильный дизайн</ion-option>
+    </ion-select>
+  </ion-row>
+  <ion-list class="people-list content-list">
+    <button ion-item *ngFor="let student of filterData" (click)="presentPersonDetail(student.name)">
+      <h2>{{student.name}}</h2>
+      <a [href]="'https://t.me/' + student.telegram" class="list-item__telegram">@{{student.telegram}}</a>
+      <h3 class="list-item__birthday"><span>{{student.birthDate}}</span> <span>{{student.birthMonthName}}</span></h3>
+      <div class="item-note" item-right></div>
+    </button>
+  </ion-list>
+</ion-content>
