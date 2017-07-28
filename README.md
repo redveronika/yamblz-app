@@ -33,6 +33,10 @@
 
 1. Необходимо склонировать проект локально на свой компьютер.
 
+```
+git clone https://github.com/redveronika/yamblz-app.git
+```
+
 2. Установить необходимые модули:
 ```
 cd путь/к/папке/с/проектом
@@ -47,7 +51,7 @@ cordova platform add android
 
  Если при установке платформы IOS возникает ошибка 'Error: Cannot read property 'replace' of undefined', то предварительно выполните команду: `npm run install-ios-sim`
  
- Вместе с платформой будут установлены необходимые файлы.
+ Вместе с платформой будут установлены необходимые плагины.
  
  4. Замените файл bot-data--fake.ts на имеющийся bot-data.ts.
  
@@ -61,5 +65,4 @@ cordova platform add android
 <div>
  <img width="200" src="https://github.com/redveronika/yamblz-app/blob/master/screenshots/home.jpg">
  <img width="200" src="https://github.com/redveronika/yamblz-app/blob/master/screenshots/menu.jpg"> 
- <img width="200" src="https://github.com/redveronika/yamblz-app/blob/master/screenshots/schedule.jpg">
 </div>
